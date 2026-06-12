@@ -166,12 +166,20 @@ def model_info():
     })
 
 if __name__ == '__main__':
+    import os
+    
+    # Detectar si estamos en producción (Render) o desarrollo local
+    port = int(os.environ.get('PORT', 5000))
+    debug = os.environ.get('DEBUG', 'False').lower() == 'true'
+    
     print("\n" + "="*60)
     print("🚀 INICIANDO API DE PARKINSON - FASE 2 PROTOTIPO")
     print("="*60)
-    print(f"📍 URL: http://localhost:5000")
-    print(f"📍 Health Check: http://localhost:5000/api/health")
-    print(f"📍 Predicción: http://localhost:5000/api/predict (POST)")
+    print(f"📍 Puerto: {port}")
+    print(f"📍 Modo debug: {debug}")
+    print(f"📍 Health Check: http://localhost:{port}/api/health")
+    print(f"📍 Predicción: http://localhost:{port}/api/predict (POST)")
     print("="*60 + "\n")
     
-    app.run(debug=True, port=5000)
+    # En producción usar host 0.0.0.0 para aceptar conexiones externas
+    app.run(host='0.0.0.0', port=port, debug=debug)
