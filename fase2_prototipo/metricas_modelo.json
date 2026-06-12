@@ -1,0 +1,11 @@
+{
+  "algoritmo": "SVM (Support Vector Machine)",
+  "kernel": "rbf",
+  "metricas": {
+    "accuracy": 0.9231,
+    "precision": 0.9062,
+    "recall": 1.0,
+    "f1_score": 0.9508,
+    "auc_roc": 0.9552
+  }
+}
