@@ -171,7 +171,7 @@ if __name__ == '__main__':
     print("="*60)
     print(f"📍 URL: http://localhost:5000")
     print(f"📍 Health Check: http://localhost:5000/api/health")
-    print(f" Predicción: http://localhost:5000/api/predict (POST)")
+    print(f"📍 Predicción: http://localhost:5000/api/predict (POST)")
     print("="*60 + "\n")
     
     app.run(debug=True, port=5000)
